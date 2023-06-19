@@ -8,10 +8,16 @@ class App extends Component {
   };
 
   render() {
+    const { contacts } = this.state;
     return (
       <div>
         <h1>Phonebook</h1>
-        <ContactForm />
+        <ContactForm
+          onSubmit={name => {
+            contacts.push(name);
+            console.log(contacts);
+          }}
+        />
       </div>
     );
   }

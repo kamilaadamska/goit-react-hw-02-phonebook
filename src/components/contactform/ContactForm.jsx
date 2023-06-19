@@ -7,10 +7,13 @@ class ContactForm extends Component {
 
   addContact = e => {
     e.preventDefault();
+
     const addContactForm = e.currentTarget;
     const addedName = addContactForm.elements.name.value;
+
     this.setState({ name: addedName });
-    console.log(this.state);
+    this.props.onSubmit(addedName);
+    addContactForm.reset();
   };
 
   render() {
