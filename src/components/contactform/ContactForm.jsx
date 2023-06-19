@@ -5,20 +5,20 @@ class ContactForm extends Component {
     name: '',
   };
 
-  addContact = e => {
+  handleSubmit = e => {
     e.preventDefault();
 
     const addContactForm = e.currentTarget;
-    const addedName = addContactForm.elements.name.value;
+    const name = addContactForm.elements.name.value;
 
-    this.setState({ name: addedName });
-    this.props.onSubmit(addedName);
+    this.setState({ name: name });
+    this.props.onSubmit({ name });
     addContactForm.reset();
   };
 
   render() {
     return (
-      <form onSubmit={this.addContact}>
+      <form onSubmit={this.handleSubmit}>
         <input
           type="text"
           name="name"
