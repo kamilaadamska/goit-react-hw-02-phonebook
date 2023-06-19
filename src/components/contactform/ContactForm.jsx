@@ -12,7 +12,7 @@ class ContactForm extends Component {
     const name = addContactForm.elements.name.value;
 
     this.setState({ name: name });
-    this.props.onSubmit({ name });
+    this.props.onSubmit(name);
     addContactForm.reset();
   };
 
