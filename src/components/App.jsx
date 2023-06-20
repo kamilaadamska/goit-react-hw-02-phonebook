@@ -9,10 +9,12 @@ class App extends Component {
     filter: '',
   };
 
-  addContact = addedName => {
+  addContact = newName => {
+    const { addedName, addedNumber } = newName;
     const contact = {
       id: nanoid(3),
       name: addedName,
+      number: addedNumber,
     };
 
     this.setState(prevState => ({
