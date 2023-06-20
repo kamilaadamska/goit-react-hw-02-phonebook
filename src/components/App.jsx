@@ -17,11 +17,20 @@ class App extends Component {
 
   addContact = newName => {
     const { addedName, addedNumber } = newName;
+
     const contact = {
       id: nanoid(3),
       name: addedName,
       number: addedNumber,
     };
+
+    if (
+      this.state.contacts.find(
+        contact => contact.name.toLowerCase() === addedName.toLowerCase()
+      )
+    ) {
+      return alert(`${addedName} is already in contacts!`);
+    }
 
     this.setState(prevState => ({
       contacts: [...prevState.contacts, contact],
