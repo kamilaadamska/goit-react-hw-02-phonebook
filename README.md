@@ -1,4 +1,4 @@
-# React homework template
+# [Visit my project website](https://kamilaadamska.github.io/goit-react-hw-02-phonebook)
 
 Этот проект был создан при помощи
 [Create React App](https://github.com/facebook/create-react-app). Для знакомства
