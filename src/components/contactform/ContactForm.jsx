@@ -1,11 +1,7 @@
+import PropTypes from 'prop-types';
 const { Component } = require('react');
 
 class ContactForm extends Component {
-  state = {
-    name: '',
-    number: '',
-  };
-
   handleSubmit = e => {
     e.preventDefault();
 
@@ -13,7 +9,6 @@ class ContactForm extends Component {
     const addedName = addContactForm.elements.name.value;
     const addedNumber = addContactForm.elements.number.value;
 
-    this.setState({ name: addedName, number: addedNumber });
     this.props.onSubmit({ addedName, addedNumber });
     addContactForm.reset();
   };
@@ -48,3 +43,7 @@ class ContactForm extends Component {
 }
 
 export default ContactForm;
+
+ContactForm.propTypes = {
+  onSubmit: PropTypes.func,
+};
